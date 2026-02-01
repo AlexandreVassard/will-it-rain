@@ -1,0 +1,16 @@
+import { build } from "esbuild";
+
+await build({
+  entryPoints: ["src/index.ts"],
+  bundle: true,
+  platform: "node",
+  target: "node20",
+  format: "esm",
+  outfile: "dist/index.mjs",
+  minify: true,
+  banner: {
+    js: "// Will It Rain — AWS Lambda\n",
+  },
+});
+
+console.log("Built dist/index.mjs");
